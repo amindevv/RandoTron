@@ -1,3 +1,7 @@
 export interface MainState {
-  randoms: [number, number, number];
+  randoms: Array<number>;
+}
+
+export interface RootState {
+  main: MainState;
 }

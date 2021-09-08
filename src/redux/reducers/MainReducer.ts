@@ -11,9 +11,12 @@ const MainReducer = (
 ): MainState => {
   switch (action.type) {
     case 'RANDOMIZE':
-      return state;
+      return {
+        ...state,
+        randoms: action.randoms,
+      };
     default:
-      return state;
+      return initialState;
   }
 };
 
