@@ -12,7 +12,7 @@ const RandoButton = ({onPress}: Props) => {
       style={styles.button}
       activeOpacity={0.8}
       onPress={onPress}>
-      <Icon name="chatbox" size={21} color={'#ecf0f1'} />
+      <Icon name="color-wand-outline" size={21} color={'#ecf0f1'} />
       <Text style={styles.text}>Randomize!</Text>
     </TouchableOpacity>
   );
