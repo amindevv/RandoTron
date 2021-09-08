@@ -15,7 +15,9 @@ const App = () => {
     <Provider store={configureStore}>
       <SafeAreaProvider>
         <NavigationContainer>
-          <Stack.Screen component={Home} name={Containers.HOME} />
+          <Stack.Navigator>
+            <Stack.Screen component={Home} name={Containers.HOME} />
+          </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>
     </Provider>
