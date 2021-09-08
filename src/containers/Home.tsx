@@ -1,20 +1,24 @@
-import React, {useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import HistoryButton from '../components/HistoryButton';
 import RandomBoxContainer from '../components/RandomBoxContainers';
 import RandomButton from '../components/RandomButton';
-import {generateRandom} from '../redux/actionCreators/MainActionCreator';
-import {RootState} from '../types/MainState';
+import { generateRandom } from '../redux/actionCreators/MainActionCreator';
+import { RootState } from '../types/MainState';
 
 const Home = () => {
   const dispatch = useDispatch();
   const currentRandoms = useSelector((root: RootState) => root.main.randoms);
-
-  useEffect(() => {}, []);
+  const [randoms, setRandoms] = useState<number[][]>([])
 
   useEffect(() => {
-    console.log(currentRandoms);
+    setRandoms(randoms  => {
+      return ([
+        ...randoms,
+        currentRandoms
+      ])
+    })
   }, [currentRandoms]);
 
   const requestRandoms = () => {
@@ -29,7 +33,7 @@ const Home = () => {
 
       <View style={styles.actions}>
         <RandomButton onPress={requestRandoms} />
-        <HistoryButton onPress={() => {}} />
+        <HistoryButton onPress={() => { }} />
       </View>
     </View>
   );

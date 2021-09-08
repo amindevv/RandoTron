@@ -1,8 +1,9 @@
-import {ActionMain} from '../../types/MainActions';
-import {MainState} from '../../types/MainState';
+import { ActionMain } from '../../types/MainActions';
+import { MainState } from '../../types/MainState';
+import { generateRandomArray } from '../../utils/Random';
 
 const initialState: MainState = {
-  randoms: [0, 0, 0],
+  randoms: generateRandomArray(),
 };
 
 const MainReducer = (
