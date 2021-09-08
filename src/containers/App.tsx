@@ -7,6 +7,7 @@ import {Home} from './';
 import {configureStore} from '../redux/Store';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Containers} from '../config/Const';
+import Header from '../components/Header';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +17,11 @@ const App = () => {
       <SafeAreaProvider>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen component={Home} name={Containers.HOME} />
+            <Stack.Screen
+              component={Home}
+              name={Containers.HOME}
+              options={() => Header()}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>

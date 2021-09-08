@@ -6,7 +6,7 @@ import RandomButton from '../components/RandomButton';
 const Home = () => {
   return (
     <View style={styles.home}>
-      <View style={{flex: 1}} />
+      <View style={styles.content} />
 
       <View style={styles.actions}>
         <RandomButton onPress={() => {}} />
@@ -20,7 +20,10 @@ const Home = () => {
 const styles = StyleSheet.create({
   home: {
     flex: 1,
-    backgroundColor: '#2c3e50',
+    backgroundColor: '#34495e',
+  },
+  content: {
+    flex: 1,
   },
   actions: {
     flexDirection: 'row',
