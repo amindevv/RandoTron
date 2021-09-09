@@ -21,6 +21,7 @@ const History = ({randoms, modalVisible, onModalClose}: Props) => {
         <TouchableOpacity activeOpacity={1} style={styles.container}>
           <FlatList
             data={randoms}
+            keyExtractor={(item, index) => index.toString()}
             renderItem={({item}) => <HistoryRow randoms={item} />}
           />
         </TouchableOpacity>

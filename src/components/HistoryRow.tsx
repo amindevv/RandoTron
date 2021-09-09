@@ -7,8 +7,10 @@ interface Props {
 const HistoryRow = ({randoms}: Props) => {
   const RandomTexts = () => (
     <>
-      {randoms.map(random => (
-        <Text style={styles.text}>{random}</Text>
+      {randoms.map((random, index) => (
+        <Text key={index.toString()} style={styles.text}>
+          {random}
+        </Text>
       ))}
     </>
   );
