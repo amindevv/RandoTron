@@ -11,18 +11,18 @@ import Header from '../components/Header';
 
 const Stack = createNativeStackNavigator();
 
+const RootNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen component={Home} name={Containers.HOME} options={Header} />
+  </Stack.Navigator>
+);
+
 const App = () => {
   return (
     <Provider store={configureStore}>
       <SafeAreaProvider>
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              component={Home}
-              name={Containers.HOME}
-              options={Header}
-            />
-          </Stack.Navigator>
+          <RootNavigator />
         </NavigationContainer>
       </SafeAreaProvider>
     </Provider>
